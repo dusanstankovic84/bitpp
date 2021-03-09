@@ -247,9 +247,10 @@ switch (operator) {
         break;
     case "/":
         if (b===0) {
-        console.log("b is zero")
-        } break;
-        console.log(a/b)
+        console.log("b is zero");
+        } else {
+        console.log(a/b);
+        }
          break;
     case "*":
         console.log(a*b)
