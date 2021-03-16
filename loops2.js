@@ -50,7 +50,7 @@ for (i = 0; i < arr.length; i++) {
 console.log(minimum);
 console.log(rezultat);
 
-/*Write a program that finds the first element larger than minimum and prints out its value.
+/* 4. Write a program that finds the first element larger than minimum and prints out its value.
 Input array: [4, 2, 2, -1, 6]
 Output: 2*/
 
@@ -76,4 +76,141 @@ Output: 2*/
 
 /*arr = [4, 2, 2, -1, 6];
 arr.sort();
-console.log(arr[1]);/*
+console.log(arr[1]);*/
+
+var n = [4, 2, 2, -1, 6];
+var min = n[0];                                                 
+
+for (var i = 0; i < n.length; i++) {                             
+    if (n[i] < min) {                                                            
+        min = n[i];
+    }
+}
+
+var nextMin = n[0];                                              
+for (var j = 0; j < n.length; j++) {                            
+    if (n[j] < nextMin && n[j] !== min) {                       
+        nextMin = n[j];                                          
+    }
+}
+console.log('The first element larger then the minimum (' + min + ') is: ' + nextMin);
+console.log('\n\n');
+
+
+/* 5. Write a program that calculates the sum of positive elements in the array.
+Input array: [3, 11, -5, -3, 2]
+Output: 16*/
+var pos = [3, 11, -5, -3, 2];
+var sumPos = 0;
+for (var k = 0; k < pos.length; k++) {                      
+    if (pos[k] >= 0) {
+        sumPos = sumPos + pos[k];
+    }
+}
+
+console.log('The sum of positive elements is ' + sumPos);
+
+/* 6. Write a program that checks if a given array is symmetric. An array is symmetric if it can
+be read the same way both from the left and the right hand side.
+Input array: [2, 4, -2, 7, -2, 4, 2]
+Output: The array is symmetric.
+Input array: [3, 4, 12, 8]
+Output: The array isn’t symmetric.*/
+var leftArr = [2, 4, -2, 7, -2, 4, 2];
+var rightArr = [];
+var countEq = 0;                                                
+
+for (var i = 0; i < leftArr.length; i++) {                      
+    rightArr[i] = leftArr[leftArr.length-1-i];                  
+}
+console.log(leftArr);
+console.log(rightArr);
+
+for (var j = 0; j < leftArr.length; j++) {                      
+    if (leftArr[j] === rightArr[j]) {
+        countEq = countEq + 1;                                  
+    }
+}
+if (countEq === leftArr.length) {                               
+}
+else {
+    console.log('The array isn\'t symmetric.');
+}
+
+
+/* 7. Write a program that intertwines two arrays. You can assume the arrays are of the same
+length.
+Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
+Output array: [4, 3, 5, 8, 6, 11, 2, 9]*/
+var w1 = [4, 5, 6, 2];
+var w2 = [3, 8, 11, 9];
+var intw = [];
+
+for (var i = 0; i < w1.length; i++) {                    
+}
+console.log('Intertwined array is ');
+console.log(intw);
+
+/* 8. Write a program that concatenates two arrays.
+Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
+Output array: [4, 5, 6, 2, 3, 8, 11, 9]*/
+c1 = [4, 5, 6, 2];
+c2 = [3, 8, 11, 9];
+cres = [];
+
+for (var i = 0; i < c1.length; i++) {                    
+    cres[i] = c1[i]; 
+}
+
+for (var j = 0; j < c2.length; j++) {                    
+    cres[c1.length + j] = c2[j];
+}
+console.log('Concatenated array is: ');
+console.log(cres);
+
+/* 9. Write a program that deletes a given element e from the array a.
+Input: e = 2, a = [4, 6, 2, 8, 2, 2]
+Output array: [4, 6, 8]*/
+var a = [4, 6, 2, 8, 2, 2];
+var e = 2;
+var delA = [];
+
+for (var i = 0; i < a.length; i++) {              
+    if (a[i] !== e) {
+        delA[delA.length] = a[i];
+    }
+}
+console.log('Array after deletion is: ');
+console.log(delA);
+
+
+console.log('\n\n');
+
+
+/* 10. Write a program that inserts a given element e on the given position p in the array a. If
+the value of the position is greater than the array length, print the error message.
+Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
+Output: [2, -2, 33, 78, 12, 5, 8]*/
+var a = [2, -2, 33, 12, 5, 8];
+var e = 78;
+var p = 3;
+var b = [];
+
+if (p < a.length) {                                      
+    for (var i = 0; i < a.length && i <= p; i++) {      
+        if (p === i) {
+            b[i] = e;
+        }
+        else {
+            b[i] = a[i];
+        }
+    }
+    for (var j = 0; j < a.length - p; j++) {           
+    }
+    console.log('The new array is: ')
+    console.log(b);
+}
+else {
+    console.log('Position error.');
+}
+

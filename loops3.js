@@ -73,3 +73,77 @@ for ( i = 0; i < a.length; i++) {
 console.log(elemetiNiza);
 
 
+/*6. Write a program that outputs the sum of squares of the first 20 numbers.*/
+
+var f = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+var countF = 0;
+var sumSqr = 0;
+
+while (countF < 20) {
+    console.log('Current number is ' + f[countF]);
+    sumSqr = sumSqr + (f[countF]*f[countF]);
+    console.log('The square is: ' + (f[countF]*f[countF]) + ' \n --- Loop back ---');
+    countF++;
+}
+console.log('The sum of squares is: ' + sumSqr);
+
+var s = [['David', 80], ['Marko', 77], ['Dany', 88], ['John', 95], ['Thomas', 68]];
+var gradeSum = 0;
+
+for (var  i = 0; i < s.length; i++) {
+    gradeSum = gradeSum + s[i][1];
+}
+
+var average = gradeSum/s.length;
+
+
+/*7. Write a program that computes average marks of the following students. Then use this
+average to determine the corresponding grade.
+David 80
+Marko 77
+Dany 88
+John 95
+Thomas 98
+The grades are computed as follows :
+< 60% F
+< 70% D
+< 80% C
+< 90% B
+< 100% A */
+if (average < 60) {
+    console.log('The grade is F');
+}
+else if (average < 70) {
+    console.log('The grade is D');
+}
+else if (average < 80) {
+    console.log('The grade is C');
+}
+else if (average < 90) {
+    console.log('The grade is B');
+}
+else if (average < 100) {
+    console.log('The grade is A');
+}
+
+/*8. Write a program that uses console.log to print all the numbers from 1 to 100, with two
+exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers
+divisible by 5 (and not 3), print "Buzz" instead. When you have that working, modify your
+program to print "FizzBuzz", for numbers that are divisible by both 3 and 5 (and still print
+"Fizz" or "Buzz" for numbers divisible by only one of those).*/
+
+
+for (var i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log('FizzBuzz');
+    }
+    else if (i % 3 === 0) {
+        console.log('Fizz');
+    }
+    else if (i % 5 === 0) {
+        console.log('Buzz');
+    }
+    else {
+        console.log('Number: ' + i);
+    }
+}
