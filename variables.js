@@ -94,4 +94,5 @@ if (speed>60 && speed<120) {
     isDrivingSafely = false;
 } console.log(isDrivingSafely);
 
-
+var a = true;
+console.log(typeof a);

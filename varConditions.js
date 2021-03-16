@@ -69,3 +69,30 @@ if (number > 0) {
 }
 
 a = (number > 0) ? 'pozitivan' : 'negativan';
+
+var x = 3;
+var c = 1;
+var v = 2;
+var result = x * c * v;
+if (result > 0) {
+    console.log("the sign is '+' ");
+} else if (result < 0) {
+    console.log("the sign is '-' ");
+} else {
+    console.log("result is 0")
+}
+
+
+var a,b,c,d,e;
+var max;
+
+var niz = [-5,-2,5,0,-1];
+for (let index = 0; index < niz.length; index++) {
+    if(index == 0){
+        max = niz[index];
+    }else if(niz[index] > max){
+        max = niz[index];
+    }
+}
+console.log(max);
+
