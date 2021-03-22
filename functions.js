@@ -135,20 +135,33 @@ var result = squere("*");
 console.log(result);*/
 //pitati
 
-var res ='';
-   for (var i = 0; i < 5; i++) {
-       res += '*';
+function square(a) {                   
+    var starFinal = '';                                            // Final string
+    for (var i = 1; i <= a; i++) {                                 // Main loop for creating rows 
+        if (i === 1 || i === a) {                                  // condition for creating the first and last row
+            var starL = '';
+            for (var k = 0; k < a; k++) {                          // Loop for first and last row
+                starL = starL + '*'; 
+            }
+            starFinal = starFinal + starL + '\n';                  // Adding created string to the final string
+        }
+            else {
+                var starM = '';
+                for (var j = 1; j <= a; j++) {                     // Loop for creating middle rows
+                    if (j === 1 || j === a) {                      // Condition for printing '*' or ' ' string
+                        var starM = starM + '*';
+                    }    
+                    else {            
+                        starM = starM + ' '; 
+                    }
+                }
+                starFinal = starFinal + starM + '\n';              // Adding created middle row string to the final string
+            }
     }
-console.log(res);
-
-var res = "\n";
-for (var i = 0; i < 3; i++) {
-    for (var j = 0; j < 2; j++){
-        res +="*\t"; // ili res = res + "*\t"
-    }
-    res += "\n";
+    return starFinal;
 }
-console.log(res);
+var result = square(5);
+console.log(result);
 
 
    /*6. Write a program that draws a horizontal chart representing three given values. For
@@ -157,6 +170,26 @@ console.log(res);
    * * *
    * * * * * * *
 */
+
+function stars(a, b, c) {
+    var starSum_a = '';
+    for (var i = 0; i < a; i++) {
+        starSum_a = starSum_a + '*'; 
+    }
+    var starSum_b = '';
+    for (var j = 0; j < b; j++) {
+        starSum_b = starSum_b + '*'; 
+    }
+    var starSum_c = '';
+    for (var i = 0; i < c; i++) {
+        starSum_c = starSum_c + '*'; 
+    }
+    return starSum_a + '\n' + starSum_b + '\n' + starSum_c;
+
+}
+
+var result = stars(5, 3, 7);
+console.log(result);
 
 /*7. Write a program that calculates a number of digits of a given number.*/
 
@@ -184,3 +217,102 @@ function numberLenght(a) {
 var number = 3450;
 var numbLenght = (""+number).length; // numb of digits
 console.log(numbLenght);
+
+
+/* 8. Write a program that calculates a number of appearances of a given number in a given
+array.
+Inputs: a = [2, 4, 7, 8, 7, 7, 1], e = 7
+Result: 3 */
+
+var e = 7;
+var a = [2, 4, 7, 8, 7, 7, 1];
+
+function numOfAppearances () {
+    var k=0;
+    for (i=0; i < a.length; i++){
+        if (e === a[i]) {
+            k = k + 1;
+        }
+    }
+    return k;
+}
+console.log("number " + "e " + "appears " + numOfAppearances(e,a) + " times");
+
+
+/* 9. Write a program that calculates the sum of odd elements of a given array.*/
+
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var result = sum(array);
+
+function sum(a) {
+    var y = 0;
+    for (var i = 0; i < array.length; i++) {
+        y = y + array[i];
+    }
+    return y;
+}
+console.log(result);
+
+
+/* 10. Write a program that calculates the number of appearances of a letter a in a given string.
+Modify the program so it calculates the number of both letters a and A.*/
+
+var string = "Abrakadabra";
+var result = sum(string);
+
+function sum(string) {
+    var count_a = 0;
+    var count_A = 0;
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === 'a' || string[i] === 'A') {
+            count_a++;
+        }
+    }
+    return count_a;
+}
+console.log('Letters \'A\' and \'a\' appear ' + result + ' times');
+
+
+/* 11. Write a program that concatenates a given string given number of times. For example, if
+“abc” and 4 are given values, the program prints out abcabcabcabc.*/
+
+var a = "abc";
+var b = 4;
+var result = sum(a,b);
+
+function sum(a,b) {
+    var x = "";
+    for (var i = 0; i <= b; i++) {
+        x = x + a;
+    }
+    return x;
+}
+console.log(result);
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
