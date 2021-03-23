@@ -162,6 +162,7 @@ function square(a) {
 }
 var result = square(5);
 console.log(result);
+//pitati
 
 
    /*6. Write a program that draws a horizontal chart representing three given values. For
@@ -190,6 +191,7 @@ function stars(a, b, c) {
 
 var result = stars(5, 3, 7);
 console.log(result);
+//pitati
 
 /*7. Write a program that calculates a number of digits of a given number.*/
 
