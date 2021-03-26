@@ -131,21 +131,22 @@ console.log("number of letter n is "+result);
 result should be the position of character. If there are no occurrences of the character, the
 function should return -1.*/
 
-function lastOccur(string,char) {
+function firstOccur(string,char) {
     var position = 0;
-    for (var i = string.length-1; i >= 0; i--) {
-        if (string[i] === char) {
-            position = i+1;
-            break;                                      // break out of loop after first occurance
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === char) {                       
+            position = i+1;                             // ili  position = i
+            break;                                      //      i = string.lenght
         }
         else position = -1;
     }
     return position;
 }
-
 var stringToCheck ="My random string";
 var character = 's';
-console.log("position of the first occurrence is "+ lastOccur(stringToCheck,character));   //pitati
+console.log("position of the first occurrence is "+ firstOccur(stringToCheck,character));   
+// pitati ?
+
 
 /* 6. Write a function to find the position of the last occurrence of a character in a string. The
 result should be in human numeration form. If there are no occurrences of the character,
@@ -167,25 +168,26 @@ var stringToCheck = "My random string";
 var character = "s";
 console.log("position of the last occurrence is " + lastOccur(stringToCheck,character));  
 
+
 /* 7. Write a function to convert string into an array. Space in a string should be represented as
 “null” in new array.
 &quot;My random string&quot; -&gt; [&quot;M&quot;, &quot;y&quot;, null, &quot;r&quot;, &quot;a&quot;]
 &quot;Random&quot; -&gt; [&quot;R&quot;, &quot;a&quot;, &quot;n&quot;, &quot;d&quot;, &quot;o&quot;, &quot;m&quot;]*/
 
-function convert(stringToArray) {
-    var arrayNew = [];
-    for (var i = 0; i < stringToArray.length; i++) {
-        if (stringToArray[i] === ' ') {
-            arrayNew[i] = null;
+function con(string) {
+    var newArray = [];
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === ' ') {
+            newArray[i] = null;
         }
         else {
-            arrayNew[i] = stringToArray[i];
+            newArray[i] = string[i];
         }
     }
     return arrayNew;
 }
 
-console.log(convert('My random string'));               
+console.log(con('My random string'));               
     
 
 /* 8. Write a function that accepts a number as a parameter and checks if the number is prime or
@@ -193,17 +195,17 @@ not.
 Note: A prime number (or a prime) is a natural number greater than 1 that has no positive
 divisors other than 1 and itself.*/
 
-function primeNumb(p) {
+function prime(p) {
      var isPrime = true;
     for (var i = 2; i < 10; i++) {        //prime deljivo sa 1 i sa samim sobom
-        if (p % i===0 && p !== i) {
+        if (p % i === 0 && p !== i) {
              isPrime = false;
              break; 
              }
     }
     return isPrime;
 }
-console.log("Is this a prime number? " + primeNumb(12));
+console.log("Is this a prime number? " + prime(12));
 
 
 
@@ -213,36 +215,32 @@ provided, use “-” (dash) as the default separator.
 &quot;My random string&quot;, &quot;+&quot; -&gt; &quot;My+random+string&quot;
 &quot;My random string&quot; -&gt; &quot;My-random-string&quot;*/
 
-function replaceSpace(str, seperator) {
-    var replaceSep = "-";
-    var str1 = "";
-    if (seperator === undefined ) {
-        sepeartor ="-"
+function space(string,sep) {
+    if (sep === undefined) {       // if -ako nije definisano
+        var sep = '-';
     }
-    
-    for ( var i = 0; i < str.length; i++) {
-         if (str[i] !== " ") {
-             str1 += str[i];
-         } else if ( str[i] === " ") {
-             str1 += seperator;
-         } else {
-             str1+= replaseSep;
-           }
-
+    var newString = ''
+    for (var i = 0; i <string.length; i++) {
+        if (string[i] === ' ') {
+            newString += sep;
+        }
+        else {
+            newString += string[i];
+        }
     }
-     return str1;
-    
+    return newString;
 }
-console.log(replaceSpace("My random string", "+"));
+
+console.log(space('My random string'));  // nije def druga vrednost
 
 
 
 /* 10. Write a function to get the first n characters and add “...” at the end of newly created string.*/
 
-function string(a, b) {
+function string(m, n) {
     var newString = "";
-    for (var i=0; i < b; i++) {
-        newString += a[i];
+    for (var i=0; i < n; i++) {
+        newString += m[i];
     }
     newString += "...";
     return newString;
@@ -263,25 +261,23 @@ function convertStrToNum(arrStr) {
         strNum[j] = parseFloat(arrStr[i]);
         j++
         }
-        else {
-            j = j
-        }
-        console.log('Element stringa ' + arrStr[i] + ' na poziciji i = ' +i + '\n');
-        console.log('Novi niz je ' + strNum + ' trenutna pozicija j = ' + (j - 1) + '\n');
+        // else {
+        //   j = j
+        // }
+        //console.log('Element stringa ' + arrStr[i] + ' na poziciji i = ' +i + '\n');
+        //console.log('Novi niz je ' + strNum + ' trenutna pozicija j = ' + (j - 1) + '\n');
     }
     return strNum;
 }
 console.log(convertStrToNum(["1", "21", undefined, "42", "1e+3", Infinity, '6']));
 
+
 //console.log(parseFloat('12.5'));
-
 //console.log(isFinite(parseFloat(undefined)));
-
-
 //arrStr[6] = ["1", "21", undefined, "42", "1e+3", Infinity, '6']
-
 //strNum[4] = [1, 21, 42, 1000, 6]
-//pitati
+
+// pitati ?
 
 
 
@@ -296,12 +292,19 @@ function pension(birth, current, gender) {
     } else if (gender === "woman"){
         ret = 60 - (current - birth);
     } else {
-        return "please check input";
+        return " please check input";
+    }
+    if (ret > 0) {
+        return ret + " years to retirement";
+    } else {
+        return " already retired";
     }
     return ret;
 
 }
-console.log(pension(1984, 2021, "man"));
+console.log(" for woman is " + pension(1980, 2021, "woman"));
+console.log(" for man is " + pension(1984, 2021, "man"));
+
 
 /* 13. Write a function to humanize a number (formats a number to a human-readable string) with
 the correct suffix such as 1st, 2nd, 3rd or 4th.
@@ -321,33 +324,35 @@ the correct suffix such as 1st, 2nd, 3rd or 4th.
     //n = 11, 12, 13 +th;
 
  function redExcercise(n){
+     var hum =0;
     if (n > 10 && n < 14){
-        n = n + 'th';
+        hum = n + 'th';
     }else {
     var ostatak = n % 10;
    switch (ostatak) {
        case 1:
-           n = n + 'st';
+           hum = n + 'st';
            break;
        case 2:
-           n = n + 'nd';
+           hum = n + 'nd';
            break;
        case 3:
-           n = n + 'rd';
+           hum = n + 'rd';
            break;
        case 4:
        case 0:
-           n = n + 'th';
+           hum = n + 'th';
            break;
        default:
            break;
    }
     }
-    return n;
+    return hum;
    }
    console.log(redExcercise(13));
-   //pitati?
+   // pitati ?
 
+   
 
 
 
