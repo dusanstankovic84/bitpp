@@ -111,34 +111,82 @@ console.log(conc('Mi',5));
 
 
 /* 4. Write a function to count the number of letter occurrences in a string.
-&quot;My random string&quot;, &quot;n&quot; -&gt; 2*/
+My random string;, n - 2*/
 
-   function name(params) {
-       
-   }                           //kao za a u prethodnom
+function sum(string) {
+    for (var i = 0; i < string.length; i++) {
+           if (string[i]==="n") {
+               count_n++;
+           }
+       }
+       return count_n;
+    }
+var string = "My random string";
+var count_n = 0;
+var result = sum(string);                                              //kao za a u prethodnom
+console.log("number of letter n is "+result);
+
 
 /* 5. Write a function to find the position of the first occurrence of a character in a string. The
 result should be the position of character. If there are no occurrences of the character, the
 function should return -1.*/
 
-function positionOfChar(params) {
-    
+function lastOccur(string,char) {
+    var position = 0;
+    for (var i = string.length-1; i >= 0; i--) {
+        if (string[i] === char) {
+            position = i+1;
+            break;                                      // break out of loop after first occurance
+        }
+        else position = -1;
+    }
+    return position;
 }
+
+var stringToCheck ="My random string";
+var character = 's';
+console.log("position of the first occurrence is "+ lastOccur(stringToCheck,character));   //pitati
 
 /* 6. Write a function to find the position of the last occurrence of a character in a string. The
 result should be in human numeration form. If there are no occurrences of the character,
 function should return -1.*/
 
-od nazad
+function lastOccur(string,char) { 
+    var position = 0;                                    // od nazad
+    for (var i = string.length-1; i >= 0; i--) {
+        if (string[i] === char) {
+            position = i+1;
+            break;                                      // break out of loop after first occurance
+        }
+        else position = -1;
+    }
+    return position;
+}
+
+var stringToCheck = "My random string";
+var character = "s";
+console.log("position of the last occurrence is " + lastOccur(stringToCheck,character));  
 
 /* 7. Write a function to convert string into an array. Space in a string should be represented as
 “null” in new array.
 &quot;My random string&quot; -&gt; [&quot;M&quot;, &quot;y&quot;, null, &quot;r&quot;, &quot;a&quot;]
 &quot;Random&quot; -&gt; [&quot;R&quot;, &quot;a&quot;, &quot;n&quot;, &quot;d&quot;, &quot;o&quot;, &quot;m&quot;]*/
 
-function name(params) {
-    
+function convert(stringToArray) {
+    var arrayNew = [];
+    for (var i = 0; i < stringToArray.length; i++) {
+        if (stringToArray[i] === ' ') {
+            arrayNew[i] = null;
+        }
+        else {
+            arrayNew[i] = stringToArray[i];
+        }
+    }
+    return arrayNew;
 }
+
+console.log(convert('My random string'));               
+    
 
 /* 8. Write a function that accepts a number as a parameter and checks if the number is prime or
 not.
@@ -191,9 +239,17 @@ console.log(replaceSpace("My random string", "+"));
 
 /* 10. Write a function to get the first n characters and add “...” at the end of newly created string.*/
 
-function name(params) {
-    
+function string(a, b) {
+    var newString = "";
+    for (var i=0; i < b; i++) {
+        newString += a[i];
+    }
+    newString += "...";
+    return newString;
 }
+console.log(string("My random string", 9));
+
+
 
 /*. 11. Write a function that converts an array of strings into an array of numbers. Filter out all
 non-numeric values.
@@ -257,15 +313,14 @@ the correct suffix such as 1st, 2nd, 3rd or 4th.
  // brojevi izmedju 4 i 19 th
  // % 2 nd
  // % 3 rd
-    n % 10 = 1 +st;
-    n % 10 = 2 +nd;
-    n % 10 = 3 +rd;
-    n % 10 = 4 +th;
-    n % 10 = 0 +th;
-    n = 11, 12, 13 +th;
+    //n % 10 = 1 +st;
+    //n % 10 = 2 +nd;
+    //n % 10 = 3 +rd;
+    //n % 10 = 4 +th;
+    //n % 10 = 0 +th;
+    //n = 11, 12, 13 +th;
 
  function redExcercise(n){
-    
     if (n > 10 && n < 14){
         n = n + 'th';
     }else {
