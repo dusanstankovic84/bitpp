@@ -41,12 +41,18 @@ console.log(arrIntoStr([NaN, 0, 15, false, -22, "",undefined, 47, null]));
 Input: [NaN, 0, 15, false, -22, &#39;&#39;, undefined, 47, null]
 Output: [15, -22, 47] */
 
-function filterFalsy(arr) {
-    
-}
-console.log(filterFalsy([NaN, 0, 15, false, -22, "", undefined, 47, null]));
 //pitati
 
+function filterFalsy(arr){
+    var pom  = [];
+    for (var i = 0; i < arr.length; i++){
+        if (arr[i]){
+            pom[pom.length] = arr[i];
+        }
+    }
+    return pom;
+}
+console.log(filterFalsy([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 
 
 /* 4. Write a program that calculates a number of integer values in the array.
@@ -56,7 +62,7 @@ Output: 3 */
 function numbOfInteger(arr) {
     var sum = 0;
     for (var i = 0; i < arr.length; i++){
-        if (isFinite(parseInt(arr[i]))) {
+        if (isFinite(parseFloat(arr[i]))) {
             sum++;
         }
     }
@@ -74,7 +80,7 @@ Output: 2 */
 function floatValues(arr) {
     var sum = 0;
     for (var i = 0; i < arr.length; i++){
-        if (isFinite(parseFloat(arr[i]))) {
+        if (isFinite(parseInt(arr[i]))) {
             sum++;
         }
     }
