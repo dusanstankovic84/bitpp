@@ -62,7 +62,7 @@ Output: 3 */
 function numbOfInteger(arr) {
     var sum = 0;
     for (var i = 0; i < arr.length; i++){
-        if (isFinite(parseFloat(arr[i]))) {
+        if (parseInt(arr[i]) === arr[i]) {
             sum++;
         }
     }
@@ -80,7 +80,7 @@ Output: 2 */
 function floatValues(arr) {
     var sum = 0;
     for (var i = 0; i < arr.length; i++){
-        if (isFinite(parseInt(arr[i]))) {
+        if (parseInt(arr[i]) !== parseFloat(arr[i]) && !!(arr[i])){
             sum++;
         }
     }

@@ -46,11 +46,8 @@ for ( i = 0; i < x.length; i++){
  elements = elements + x[i];
  //elements = elements + "\n"
 }
-<<<<<<< HEAD
-
 for (var x = 0; x <= 10; x++) {
     console.log(x * x);
-=======
 console.log(elements);
 
 5. /*Write a program that prints the elements of the following array.*/
@@ -70,7 +67,6 @@ console.log(ele);
 var zbir = 0;
 for (var i = 0; i<=20; i++) {
     zbir = zbir + i * i;
->>>>>>> a02798c3727fe32915fe50d80cc6599857887b04
 }
 console.log(zbir);
 
