@@ -59,18 +59,52 @@ Output:
 Bill acquired 59 points and earned 6. Micahel acquired 50 points and failed to complete
 the exam. */
 
+function grades(arrName, arrpoints) {
+    
+    var arrName;
+    var arrpoints;
+    var result = '';
+    
+    for (i = 0; i < arrName.length; i++) {
+        if (arrpoints[i] < 51) {
+            result += arrName[i] + " acquired " + arrpoints[i] + " points and failed to complete the exam.\n"
+        } else if (arrpoints[i] <= 60) {
+            result += arrName[i] + " acquired " + arrpoints[i] + " points and earned 6.\n"
+        } else if (arrpoints[i] <= 70) {
+            result += arrName[i] + " acquired " + arrpoints[i] + " points and earned 7.\n"
+        } else if (arrpoints[i] <= 80) {
+            result += arrName[i] + " acquired " + arrpoints[i] + " points and earned 8.\n"
+        } else if (arrpoints[i] <= 90) {
+            result += arrName[i] + " acquired " + arrpoints[i] + " points and earned 9.\n"
+        } else if (arrpoints[i] <= 100) {
+            result += arrName[i] + " acquired " + arrpoints[i] + " points and earned 10.\n"
+        }
+    }
+    
+    return result;
+
+}
+
+console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill"], [50, 39, 63, 72, 99, 51, 83, 59]));
 
 
 
 
+/*4.(skip :))Sort a previously defined array. Place its sorted values into a new array whose values are equivalent to the first array's values multiplied by 2.
+Input: [ 13, 11, 15, 5, 6, 1, 8, 12 ]
+Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]*/
 
 
 
-/* 4. */
+/* 5. Sort a previously defined array in a descending order and display it in the console.
+Input:  [ 13, 11, 15, 5, 6, 1, 8, 12 ]
+Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ]*/
 
-/* 5. */
 
-/* 6. */
+
+/* 6.Write a program that uses a loop to add all the even numbers from 1 to 1000 and subtracts all the odd numbers 1 to 500 from the calculated sum. The result should then be multiplied by 12.5 and displayed in console.
+Output: 2350000*/
+
 
 
 /* 7. Define a 10 element array. Take the first two letters from every string (that has at least 2
@@ -78,10 +112,6 @@ letters) in the array and create a new string from them. Print it out in the con
 Input: [ &quot;M&quot;, &quot;Anne&quot;, 12, &quot;Steve&quot;, &quot;Joe&quot;, &quot;John&quot;, &quot;David&quot;, &quot;Mark&quot;, true, &quot;A&quot; ] */
 //Output: AnStJoJoDaMa
 
-
-function name(params) {
-    
-}
 
 
 

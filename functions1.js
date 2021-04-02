@@ -1,51 +1,4 @@
-//predavanje- Dario
 
-function addNumbers(a, b) {     //parametar
-    var result = a + b;
-    return result;
-}
-
-var m = 4;
-var n = 5;
-
-var result = addNumbers(m, n); //call or invoke //arguments
-
-console.log(result);
-
-//
-
-function isArraySym(array) {
-   var isSym = true;
-   for (var start = 0, end = array.lenght -1; start< end; start++,end--){
-       if (array[start] !== array[end]) {
-           isSym = false;
-       }
-   }
-   return isSym;
-}
-
-var result = isArraySym(1,3,1);
-
-//
-
-function arrLenght(arr) {
-    return arr.lenght;
-}
-var result = arrLenght([1,2,3,4]);
-console.log(result);
-
-//
-
-function concatinate() {
-    var newString = "";
-    for (var i=0; i < arguments.length; i++){
-        newString += arguments[i];
-    }
-    return newString;
-}
- 
- var result = concatinate("nesto", "danas", "funkcije");
- console.log(result);
 
 
  // 1. Write a program that calculates the maximum of two given numbers.
@@ -101,7 +54,9 @@ var d = 4;
 var result = sum(a, b, c, d);
  var result2 = result / sum.length;
  console.log(result2);
-  /*5. Write a program that draws a square of a given size. For example, if the size of square
+ 
+ 
+ /*5. Write a program that draws a square of a given size. For example, if the size of square
  is 5 the program should draw:
  *****
  * *
