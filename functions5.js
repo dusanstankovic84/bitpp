@@ -4,10 +4,12 @@ Input: [ 3, 500, 12, 149, 53, 414, 1, 19 ]
 Output: [ 3, 1, 12, 149, 53, 414, 500, 19 ] */
 
 function switchMinMAx(arr) {
+    
     var min = arr[0];
     var max = arr[0];
     var indexMin;
     var indexMax;
+    
     for ( i = 1; i < arr.length; i++ ) {
         if (arr[i] < min) {
             min = arr[i];
@@ -18,10 +20,12 @@ function switchMinMAx(arr) {
         }
 
     }
+    
     arr[indexMin] = max;
     arr[indexMax] = min;
     return arr;
 }
+
 console.log(switchMinMAx([ 3, 500, 12, 149, 53, 414, 1, 19 ]));
 
 
@@ -31,7 +35,9 @@ Input: [ 3, 500, -10, 149, 53, 414, 1, 19 ]
 Output: [ 6.5, 255, 20, 79.5, 31.5, 212, 5.5, 14.5 ] */
 
 function matemathicArr(arr) {
+    
     newArr = [];
+    
     for (var i = 0; i < arr.length; i++) {
         arr[i] = arr[i] / 2 + 5;
         if (arr[i] === 0) {
@@ -40,6 +46,7 @@ function matemathicArr(arr) {
     }
     return arr;
 }
+
 console.log(matemathicArr([3, 500, -10, 149, 53, 414, 1, 19]));
 
 
@@ -90,9 +97,36 @@ console.log(grades(["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
 
 
 
-/*4.(skip :))Sort a previously defined array. Place its sorted values into a new array whose values are equivalent to the first array's values multiplied by 2.
+/*4.Sort a previously defined array. Place its sorted values into a new array whose values are equivalent to the first array's values multiplied by 2.
 Input: [ 13, 11, 15, 5, 6, 1, 8, 12 ]
 Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]*/
+
+function sortAndMulti(arr) {
+    
+    var newArr;
+    
+    for (var i = 0; i < arr.length; i++) {                 // za redjanje od najmanjeg do najveceg
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+                newArr = arr[i];
+                arr[i] = arr[j];
+                arr[j] = newArr;
+
+            }
+
+        } 
+        
+        arr[i] *= 2;
+    }
+    
+    return arr;
+}
+
+console.log(sortAndMulti([13, 11, 15, 5, 6, 1, 8, 12]));
+
+
+//dario
+
 
 
 
@@ -100,10 +134,55 @@ Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]*/
 Input:  [ 13, 11, 15, 5, 6, 1, 8, 12 ]
 Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ]*/
 
+function sort(arr) {
+    
+    var newArr;
+    
+    for (var i = 0; i < arr.length; i++) {                 // za redjanje od  najveceg
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] < arr[j]) {
+                newArr = arr[i];
+                arr[i] = arr[j];
+                arr[j] = newArr;
+
+            }
+
+        } 
+        
+    }
+    
+    return arr;
+}
+
+console.log(sort([ 13, 11, 15, 5, 6, 1, 8, 12 ]));
+
 
 
 /* 6.Write a program that uses a loop to add all the even numbers from 1 to 1000 and subtracts all the odd numbers 1 to 500 from the calculated sum. The result should then be multiplied by 12.5 and displayed in console.
 Output: 2350000*/
+
+
+function subOddNumb(num1,num2) {
+    
+    var sum1 = 0;
+    var sum2 = 0;
+    
+    for ( var i = 1; i <= num1; i++) {
+        if ( i % 2 === 0) {
+            sum1 += i;
+        }
+    }
+    for ( var j = 1; j <= num2; j++) {
+        if ( j % 2 !== 0 ) {
+            sum2 += j;
+        }
+    }
+    
+    return (sum1 - sum2) * 12.5;
+}
+
+
+console.log(subOddNumb(1000,500));
 
 
 
@@ -132,7 +211,9 @@ Input: 17 | 15
 Output: true | false */
 
 function isPrimeNumb (numb) {
+    
     var result = true;
+    
     for (var i = 2; i < numb; i++) {
         if (numb % i === 0 && numb !== i ) {
             result = false;
@@ -140,6 +221,7 @@ function isPrimeNumb (numb) {
     }
     return result;
 }
+
 console.log(isPrimeNumb(9));
 
 
@@ -151,6 +233,7 @@ Output: true | false | true .*/
     // polindrom - citanje sa jedne i druge strane isto
 
 function isPolindromn(string) {
+    
     for ( var i = 0; i < string.length; i++) {
            var pom = string[string.length -1-i];
            if (string[i]===pom) {
@@ -165,6 +248,7 @@ function isPolindromn(string) {
         return "IS not polindrom"
     }
 }
+
 console.log("String ", isPolindromn("eye"));
 
 

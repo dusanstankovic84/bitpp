@@ -73,7 +73,7 @@ Output: 2 */
 
 function secSmall(arr) {
    
-    for (var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {    // za trazenje najmanjeg
         for (var j = 0; j < arr.length; j++)
             if (arr[i] < arr[j]) {
                 res = arr[i];

@@ -3,9 +3,11 @@
 // Write a program that finds the first element larger than minimum and prints out its value. 
 // Input array: [4, 2, 2, -1, 6]
 // Output: 2
+
 var arr = [4, 2, 2, -1, 6]
 var  min = arr[0]
 var nextMin = arr[0];
+
 for (var i = 1; i < arr.length; i++) {
 	if (min > arr[i]) {
 		min = arr[i];
@@ -16,6 +18,7 @@ for (var i = 1; i < arr.length; i++) {
 		nextMin = arr[i];
 	}
 }
+
 console.log(nextMin)
 
 
@@ -39,10 +42,12 @@ console.log(c);
 // Write a program that intertwines two arrays. 
 // Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 // Output array: [4, 3, 5, 8, 6, 11, 2, 9]
+
 var arrA = [4, 5, 6, 2]
 var arrB = [3, 8, 11, 9, 3]
 var maxlength = arrA.length > arrB.length ? arrA.length : arrB.length
 var arrResult = []
+
 for (var i = 0; i < maxlength; i++) {
 	if (arrA[i]) {
 		arrResult[arrResult.length] = arrA[i];

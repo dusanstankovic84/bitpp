@@ -4,16 +4,20 @@ Input: [&quot;1&quot;, &quot;21&quot;, undefined, &quot;42&quot;, &quot;1e+3&quo
 Output: [1, 21, 42, 1000] */
 
 function convertStrToNum(arrStr) {
+    
     var strNum = [];
     var j = 0;
+    
     for (var i = 0; i < arrStr.length; i++) {
         if (isFinite(parseFloat(arrStr[i]))) {
         strNum[j] = parseFloat(arrStr[i]);
         j++
         }
     }
+    
     return strNum;
 }
+
 console.log(convertStrToNum(["1", "21", undefined, "42", "1e+3", Infinity]));
 
 
@@ -25,14 +29,18 @@ Input: [NaN, 0, 15, false, -22, &#39;&#39;, undefined, 47, null]
 Output: “015false-2247” */
 
 function arrIntoStr(arr) {
+    
     var str = "";
+    
     for (var i = 0; i < arr.length; i++) {
         if (isFinite(arr[i]) && typeof arr[i] !== "object") {
             str += arr[i];
         }
     }
+    
     return str;
 }
+
 console.log(arrIntoStr([NaN, 0, 15, false, -22, "",undefined, 47, null]));
 
 
@@ -44,14 +52,18 @@ Output: [15, -22, 47] */
 //pitati
 
 function filterFalsy(arr){
+    
     var pom  = [];
+    
     for (var i = 0; i < arr.length; i++){
         if (arr[i]){
             pom[pom.length] = arr[i];
         }
     }
+    
     return pom;
 }
+
 console.log(filterFalsy([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 
 
@@ -60,14 +72,18 @@ Input: [NaN, 23.1, 15, false, -22.5, &#39;&#39;, 4, 7, null]
 Output: 3 */
 
 function numbOfInteger(arr) {
+    
     var sum = 0;
+    
     for (var i = 0; i < arr.length; i++){
         if (parseInt(arr[i]) === arr[i]) {
             sum++;
         }
     }
+    
     return sum;
 }
+
 console.log(numbOfInteger([NaN, 23.1, 15, false, -22.5,"", 4, 7, null]));
 //pitati
 
@@ -78,13 +94,20 @@ Input: [NaN, 23.1, 15, false, -22.5, &#39;&#39;, 4, 7, null]
 Output: 2 */
 
 function floatValues(arr) {
+    
     var sum = 0;
+    
     for (var i = 0; i < arr.length; i++){
         if (parseInt(arr[i]) !== parseFloat(arr[i]) && !!(arr[i])){
             sum++;
         }
     }
+    
     return sum;
 }
+
 console.log(floatValues([NaN, 23.1, 15, false, -22.5,"", 4, 7, null]));
 //pitati
+
+
+
