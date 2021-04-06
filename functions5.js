@@ -127,6 +127,60 @@ console.log(sortAndMulti([13, 11, 15, 5, 6, 1, 8, 12]));
 
 //dario
 
+function sortAndMulti(array) {
+    
+    var newArray = [];
+    var min = array[0];
+    var index = 0;
+
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j <array.length; j++) {
+            if (array[j] < min ) {
+                min = array[j]
+            }
+        }
+        
+        newArray[i] = min * 2;
+        array[index] = Infinity;
+        min = Infinity
+    }
+
+    return newArray;
+}
+
+console.log(sortAndMulti([13, 11, 15, 5, 6, 1, 8, 12]));    // pitati?
+
+// dario treci nacin
+
+function sortAndMulti(array, multiplier) {
+
+    newArray = [];
+
+    for (var i = 0; i < array.length -1; i++) {
+        var minIndex = i;
+        var tempElementToSwap;
+
+        for (var j = i; j < array.length; j++) {
+            var elementToCompareTo = array[i];
+
+            if (elementToCompareTo < array[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        tempElementToSwap = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = tempElementToSwap;
+    }
+
+    for (var k = 0; k < array.length; k++) {
+        newArray[k] = array[k] * multiplier;
+    }
+
+    return newArray;
+}
+
+console.log(sortAndMulti([13, 11, 15, 5, 6, 1, 8, 12], 2));
 
 
 
@@ -191,6 +245,20 @@ letters) in the array and create a new string from them. Print it out in the con
 Input: [ &quot;M&quot;, &quot;Anne&quot;, 12, &quot;Steve&quot;, &quot;Joe&quot;, &quot;John&quot;, &quot;David&quot;, &quot;Mark&quot;, true, &quot;A&quot; ] */
 //Output: AnStJoJoDaMa
 
+function firstTwoLetters(arr) {
+    
+    var res = '';
+    
+    for (var i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'string' && arr[i].length >= 2) {
+            res += arr[i][0] + arr[i][1]
+        }
+    }
+    
+    return res
+}
+
+console.log(firstTwoLetters(["M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A"]));
 
 
 
@@ -199,10 +267,42 @@ console.
 Input: Belgrade Institute of Technology
 Output: ygolonhceT fo etutitsnI edargleB */
 
+function reversedOrder(arr) {                                        // za obrnuti niz
+    
+    var arr1 = ''
+    
+    for (var i = arr.length - 1; i >= 0; i--) {
+        arr1 += arr[i]
+    }
+    
+    return arr1
+}
+
+console.log(reversedOrder('Belgrade Institute of Technology'));
+
+
 
 /* 9. Write a program that displays all the combinations of two numbers between 1 and 7.
 Don&#39;t display two of the same numbers at the same time. Display the number of possible
 combinations, as well. (E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...). */
+
+function combination() {
+    
+    var res = ''
+    
+    for (var i = 1; i <= 7; i++) {
+        for (var j = 1; j <= 7; j++) {
+            if (i !== j) {
+                res += '(' + i + ',' + j + '), ';
+            }
+        }
+    }
+    
+    return res
+}
+
+console.log(combination());
+
 
 
 /* 10. Write a program that checks if the entered number is a prime number (i.e. divisible only
@@ -258,6 +358,22 @@ greatest common divisor of two non-zero integers is the greatest positive number
 divides both numbers with no remainder.
 Input: 192 42 | 81 9
 Output: 6 | 9 */
+
+function greatestDivisor(x, y) {
+    
+    if (x <= y) {
+       var res = x;
+    }else{
+        res = y;
+    }
+        for (var i = res; i > 0; i--) {
+            if (x % i === 0 && y % i === 0) {
+                return i
+            }
+        }   
+}
+
+console.log(greatestDivisor(9,81));
 
 
 
