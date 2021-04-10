@@ -1,9 +1,9 @@
 /* 1. Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A,
 E, I, O, and U.*/
 
-// vowels - samoglasnici
 
-function numberOfVowels(str) {
+
+function numberOfVowels(str) {                 //  broj vowels - samoglasnici (ili neceg drugog) u stringu
     
     var rez = 0;
     var str1 = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'O', 'U'];
@@ -19,7 +19,7 @@ function numberOfVowels(str) {
     return rez;
 }
 
-console.log(numberOfVowels("functIon to count vOwels in A providEd string"));
+console.log(numberOfVowels("a functIon to count vOwels in A providEd string"));
 
 
 
@@ -27,16 +27,80 @@ console.log(numberOfVowels("functIon to count vOwels in A providEd string"));
 [‘a’,’b’,’c’], [1,2,3] -&gt; [‘a’,1,’b’,2,’c’,3] */
 
 
+function combineTwoArrays(arr1, arr2) {      //kombinovanje dva niza
+
+    var arr3 = [];
+
+    for (var i = 0; i < arr1.length; i++) {
+        arr3[arr3.length] = arr1[i];
+        arr3[arr3.length] = arr2[i];
+    }
+    
+    return arr3;
+}
+
+var arr1 = ["a", "b", "c"];
+var arr2 = [1,2,3];
+
+console.log(combineTwoArrays(arr1, arr2));
+
+
+
+
 /* 3. Write a function that rotates a list by k elements.
 For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]*/
+
+
+function rotate(arr, k) {            // okretanje niza za zadati element
+       
+    arr1 = [];
+       
+    for ( var i = 0; i < arr.length; i++) {
+           if ( i >= k) {
+               arr1[arr1.length] = arr[i];
+           } 
+    } 
+    for ( var j = 0; j < arr.length; j++) {
+        if ( j < k ) {
+            arr1[arr1.length] = arr[j];
+        }
+    }
+
+    
+    return arr1;
+}
+
+var arr = [1,2,3,4,5,6];
+var k = 2;
+
+console.log(rotate(arr, k));
+
+
 
 
 /* 4. Write a function that takes a number and returns array of its digits.*/
 
 
+function returnArray(numb) {       // pretvaranje broja u niz
+    
+    var arr = [];
+    var str = "" + numb;
+    
+
+    for ( i = 0; i < str.length; i++) {
+        arr[arr.length] = str[i];
+    }
+    
+    return arr;
+}
+
+console.log(returnArray(12345678));
+
+
 /* 5. Write a program that prints a multiplication table for numbers up to 12.*/
 
-function multiTable() {
+
+function multiTable() {                   // mnozenje brojeva
     
     var rez = 1;
     
@@ -55,8 +119,24 @@ console.log(multiTable());
 /* 6. Write a function to input temperature in Centigrade and convert to Fahrenheit.*/
 
 
+function celzToFahr(c) {      // pretvaranje iz celzijusa u farenhajt
+    
+    var fahr;
+    fahr = (c * 1.8) + 32;
+    return fahr
+          
+
+}
+
+var celz = 100;
+
+console.log(celzToFahr(celz) + " Fahrenheit");
+
+
 /* 7. Write a function to find the maximum element in array of numbers. Filter out all non-number
 elements.*/
+
+
 
 
 /* . Write a function to find the maximum and minimum elements. Function returns an array.*/
@@ -106,3 +186,9 @@ printed as:
 
 *********
 */
+
+
+
+
+
+

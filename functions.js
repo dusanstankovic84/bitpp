@@ -1,3 +1,19 @@
+
+// https://www.freecodecamp.org/
+// http://ittutorijali.net/
+// https://code.sololearn.com/#html
+// https://www.geeksforgeeks.org/java-how-to-start-learning-java/
+// https://codegym.cc/?utm_source=learntocodewith.me&utm_medium=post
+// https://www.udemy.com/?utm_source=adwords-brand&utm_medium=udemyads&utm_campaign=Brand-Udemy_la.EN_cc.ROW&utm_term=_._ag_80315195513_._ad_450687451854_._de_c_._dm__._pl__._ti_kwd-310556426868_._li_21213_._pd__._&utm_term=_._pd__._kw_udemy_._&matchtype=e&gclid=Cj0KCQjwmcWDBhCOARIsALgJ2QfaOFxM4Zdxe66ETklStOByhnyl85dOsK8WRC-1LW5gNlWxqTTywkEaAvS_EALw_wcB
+// https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
+// https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA
+// https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ
+// https://webeducentarns.web.app/#/
+// http://diveintohtml5.info/
+// https://w3resource.com/html/HTML-tutorials.php
+
+
+
 //predavanje- Dario
 
 function addNumbers(a, b) {     //parametar
@@ -222,3 +238,62 @@ function convertStrToNum(arrStr) {
     return strNum;
 }
 console.log(convertStrToNum(["1", "21", undefined, "42", "1e+3", Infinity, '6']));
+
+
+// kokatiniramo - spajamo dva stringa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

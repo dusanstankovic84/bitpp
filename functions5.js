@@ -137,12 +137,13 @@ function sortAndMulti(array) {
         for (var j = 0; j <array.length; j++) {
             if (array[j] < min ) {
                 min = array[j]
+                index = j;
             }
         }
         
         newArray[i] = min * 2;
         array[index] = Infinity;
-        min = Infinity
+        min = Infinity;
     }
 
     return newArray;
