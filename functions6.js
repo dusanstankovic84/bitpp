@@ -136,9 +136,12 @@ console.log(celzToFahr(celz) + " Fahrenheit");
 /* 7. Write a function to find the maximum element in array of numbers. Filter out all non-number
 elements.*/
 
+
 function maxElement(arr) {
+    
     var res = 0;
     var arr1 = [];
+    
     for (var i = 0; i < arr.length; i++) {
         if (isFinite(arr[i])) {
             arr1[arr1.length] = arr[i]
@@ -149,8 +152,10 @@ function maxElement(arr) {
             res = arr[j];
         }
     }
+    
     return res;
 }
+
 console.log(maxElement([1, 2, 3, 4, 5, 'nesto']));
 
 
@@ -203,6 +208,56 @@ printed as:
 
 *********
 */
+
+function makeFrame(array) {            // razbiti na delove - uvek za slozene zadatke
+    
+    var maxWordlength = 0;
+    var topAndBottomString = ""; 
+    var topAndBottomLength = 0;
+    var middlePart = "";
+    var spaceLength = 0;
+    var sapceString = "";
+    var frame = "";
+
+    function makeStringFromChar(char, numb) {
+        var resultString = "";
+        
+        for(var i = 0; i < numb; i++) {
+            resultString += char;
+        }
+    
+        return resultString;
+    }
+      
+    // naci najduzu rec
+      for (var i = 0; i < array.length; i++) {
+          if (array[i].length > maxWordlength) {
+              maxWordlength = array[i].length;
+          }
+      }  
+    
+    // napraviiti gornji i donji string                             
+       var topAndBottomLength = maxWordlength + 4; 
+       topAndBottomString = makeStringFromChar("*", topAndBottomLength);
+        
+       // for(var j = 0; j < topAndBottomLength; j++) {   // - umesto ovog ide nova funkcija(unutara)
+       // topAndBottomString += "*";   
+       // }  
+       
+    // napraviti srednji deo 
+        for (var k = 0; k < array.length; k++ ) {
+            spaceLength = maxWordlength - array[k].length;
+            sapceString = makeStringFromChar(" ", spaceLength);
+            middlePart += "* " + array[k] + sapceString + " *\n";
+        }
+    
+    // napraviti frame
+       frame = topAndBottomString + "\n" + middlePart + topAndBottomString;
+
+       return frame;
+}
+
+console.log(makeFrame(["Hello", "World", "in", "a", "frame"]));
 
 
 
