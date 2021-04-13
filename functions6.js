@@ -136,6 +136,23 @@ console.log(celzToFahr(celz) + " Fahrenheit");
 /* 7. Write a function to find the maximum element in array of numbers. Filter out all non-number
 elements.*/
 
+function maxElement(arr) {
+    var res = 0;
+    var arr1 = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (isFinite(arr[i])) {
+            arr1[arr1.length] = arr[i]
+        }
+    }
+    for (var j = 0; j < arr1.length; j++) {
+        if (arr1[j] > res) {
+            res = arr[j];
+        }
+    }
+    return res;
+}
+console.log(maxElement([1, 2, 3, 4, 5, 'nesto']));
+
 
 
 

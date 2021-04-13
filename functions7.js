@@ -10,6 +10,16 @@ Write a function named tellFortune that:
 kids.&quot;
 Call that function 3 times with 3 different values for the arguments.*/
 
+function tellFortune(numbOfChildren, partnerName, geographicLocation, jobTitle) {
+    
+    return console.log('You will be a', jobTitle, 'in', geographicLocation, 'and married to', partnerName, 'with', numbOfChildren, 'kids');
+}
+
+tellFortune(3, 'Jelena', 'Apatin', 'degustator piva');
+tellFortune(1, 'JNatasa', 'Novi Sad', '3D Artist');
+tellFortune(0, 'Ivana', 'Subotica', 'programer');
+
+
 
 
 /* 2. You know how old your dog is in human years, but what about dog years? Calculate it!
@@ -20,6 +30,13 @@ Write a function named calculateDogAge that:
 Call the function three times with different sets of values.
 Bonus: Add an additional argument to the function that takes the conversion rate of human to dog
 years.*/
+
+function calculateDogAge(puppyAge) {
+    
+    return console.log('Your doggie is', (puppyAge * 7), 'years old in dog years');
+}
+
+calculateDogAge(3)
 
 
 
