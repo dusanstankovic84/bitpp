@@ -23,6 +23,7 @@ console.log(numberOfVowels("a functIon to count vOwels in A providEd string"));
 
 
 
+
 /* 2. Write a function that combines two arrays by alternatingly taking elements.
 [‘a’,’b’,’c’], [1,2,3] -&gt; [‘a’,1,’b’,2,’c’,3] */
 
@@ -97,6 +98,8 @@ function returnArray(numb) {       // pretvaranje broja u niz
 console.log(returnArray(12345678));
 
 
+
+
 /* 5. Write a program that prints a multiplication table for numbers up to 12.*/
 
 
@@ -116,6 +119,8 @@ function multiTable() {                   // mnozenje brojeva
 console.log(multiTable());
 
 
+
+
 /* 6. Write a function to input temperature in Centigrade and convert to Fahrenheit.*/
 
 
@@ -131,6 +136,8 @@ function celzToFahr(c) {      // pretvaranje iz celzijusa u farenhajt
 var celz = 100;
 
 console.log(celzToFahr(celz) + " Fahrenheit");
+
+
 
 
 /* 7. Write a function to find the maximum element in array of numbers. Filter out all non-number
@@ -199,15 +206,17 @@ height, computes the BMI, and prints the corresponding BMI category:
 frame.:
 For example the list [&quot;Hello&quot;, &quot;World&quot;, &quot;in&quot;, &quot;a&quot;, &quot;frame&quot;] gets
 printed as:
+
 *********
 * Hello *
 * World *
 * in *
 * a *
 * frame *
-
 *********
+
 */
+
 
 function makeFrame(array) {            // razbiti na delove - uvek za slozene zadatke
     
@@ -229,7 +238,7 @@ function makeFrame(array) {            // razbiti na delove - uvek za slozene za
         return resultString;
     }
       
-    // naci najduzu rec
+    // naci najduzu string
       for (var i = 0; i < array.length; i++) {
           if (array[i].length > maxWordlength) {
               maxWordlength = array[i].length;

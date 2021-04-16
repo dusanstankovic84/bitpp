@@ -49,6 +49,17 @@ X&quot;
 Call that function three times, passing in different values each time.
 Bonus: Accept floating point values for amount per day, and round the result to a round number.*/
 
+function calculateSupply(age, amountPerDay) {
+    
+    var maxAge = 100;
+    var numberNeeded = (amountPerDay * 365) * (maxAge - age);
+    
+    return console.log('You will need', numberNeeded, 'to last you until the ripe old age of', maxAge);
+}
+
+calculateSupply(30, 2);
+calculateSupply(60, 6);
+calculateSupply(45, 8);
 
 
 /* 4. It&#39;s hot out! Let&#39;s make a converter based on the steps here.
@@ -58,3 +69,22 @@ Create a function called celsiusToFahrenheit:
 Create a function called fahrenheitToCelsius:
 ● Now store a fahrenheit temperature into a variable.
 ● Convert it to celsius and output &quot;NN°F is NN°C.&quot;*/
+
+function celsiusToFahrenheit(celsious) {
+    
+    var fahrenheit = (celsious * 1.8) + 32;
+    
+    return console.log(celsious + 'oC', 'is', fahrenheit + 'oF');
+}
+
+celsiusToFahrenheit(30);
+
+
+function fahrenheitToCelsius(fahrenheit) {
+    
+    var celsious = (fahrenheit - 32) * 1.8;
+    
+    return console.log(fahrenheit + 'oF', 'is', celsious + 'oC')
+}
+
+fahrenheitToCelsius(32);
