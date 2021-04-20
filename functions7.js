@@ -15,9 +15,9 @@ function tellFortune(numbOfChildren, partnerName, geographicLocation, jobTitle) 
     return console.log('You will be a', jobTitle, 'in', geographicLocation, 'and married to', partnerName, 'with', numbOfChildren, 'kids');
 }
 
-tellFortune(3, 'Jelena', 'Apatin', 'degustator piva');
-tellFortune(1, 'JNatasa', 'Novi Sad', '3D Artist');
-tellFortune(0, 'Ivana', 'Subotica', 'programer');
+tellFortune(3, 'Milica', 'Kragujevac', 'konobar');
+tellFortune(1, 'Nebojsa', 'Kraljevo', 'muzicar');
+tellFortune(0, 'Miroslav', 'Krusevac', 'degustator piva');
 
 
 

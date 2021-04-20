@@ -14,6 +14,22 @@
 
 
 
+
+var array = [1, 2, 3, 4, 5, 6];
+var mapHandler = function(num) {
+	return num * 10;
+}
+
+var mappedArray = array.map(mapHandler);
+var filteredArray = array.filter(function(number) {
+	return number%2 === 0;
+})
+
+console.log(mappedArray);
+console.log(filteredArray);
+
+
+
 //predavanje- Dario
 
 function addNumbers(a, b) {     //parametar
@@ -241,16 +257,6 @@ console.log(convertStrToNum(["1", "21", undefined, "42", "1e+3", Infinity, '6'])
 
 
 // kokatiniramo - spajamo dva stringa
-
-
-
-
-
-
-
-
-
-
 
 
 
