@@ -12,6 +12,10 @@
 // http://diveintohtml5.info/
 // https://w3resource.com/html/HTML-tutorials.php
 
+// knjiga: Ved Antani, Stoyan Stefanov - Objektno orijentisani JavaScript
+// https://www.delfi.rs/knjige/117209_objektno_-_orijentisan_javascript_knjiga_delfi_knjizare.html
+
+
 
 
 
@@ -21,12 +25,55 @@ var mapHandler = function(num) {
 }
 
 var mappedArray = array.map(mapHandler);
+
+
 var filteredArray = array.filter(function(number) {
 	return number%2 === 0;
 })
 
 console.log(mappedArray);
 console.log(filteredArray);
+
+
+//
+// 
+
+
+
+function modifyNumber(number, modification) {
+	var result = modification(number);
+	return result;
+}
+
+function duplicateNumber(n) {
+	return n * 2;
+}
+
+function square(n) {
+	return n * n;
+}
+
+var output = modifyNumber(100, square);
+console.log(output);
+
+function calculator(num1, num2,  operation) {
+	var result = operation(num1, num2);
+	return result;
+}
+
+function multiplication(n1, n2) {
+	return n1 * n2;
+}
+
+function addition(n1, n2) {
+	return n1 + n2;
+}
+var output = calculator(100, 200, addition);
+console.log(output);
+
+
+
+
 
 
 

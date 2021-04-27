@@ -194,8 +194,20 @@ given by the callback function.
 Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
 Output: [11, 9, 3] */
 
+var filterOdd = 
+(
+     
+    function (array) {
+         
+        var filteredArray = array.filter(function(number){
+             return number % 2 !== 0;
+         });
+         
+         return filteredArray;
 
+})([2, 8, 11, 4, 9, 3]);
 
+    console.log(filterOdd);
 
 
 
