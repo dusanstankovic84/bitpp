@@ -185,7 +185,7 @@ if (letterCount >= 6) {
 }
 if (letterCount)
 
-
+// pitati?
 
 
 
