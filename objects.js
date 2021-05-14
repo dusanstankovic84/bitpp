@@ -98,19 +98,170 @@ preparation.
 ○ Add a method that changes the type of cuisine to the given value.
 ○ Add a method that delete a given ingredient from the list of ingredients. */
 
-function culinaryRecipe(nam, cuisine, comple, ingred, time, instr) {
-         var recipe = {
-             name = nam,
-             typeOfCuisine = cuisine,
-             complexity = comple,
-             listOfIngredients = ingred,
-             preparingTime = time,
-             preparingInstruction = instr,
 
+function culinaryRecipe (name, type, complexity, ingredients, preparationTime, instruction) {
+    var recipe = {
+        mealName: name,
+        mealType: type,
+        complexity: complexity,
+        listOfIngredients: ingredients,
+        preparingTime: preparationTime,
+        preparingInstructions: instruction,
 
+        printIngredients: function() {
+            console.log(recipe.listOfIngredients);
+        },
+        canBePreparedFor15Min: function() {
+            return recipe.preparingTime < 15;    
+        },
+        changeTypeOfCuisine: function(newTypeOfCuisine) {
+            return recipe.mealType = newTypeOfCuisine;
+        },
+        deleteAnIngredient: function (ingredient) {
+            var changedListOfIngredients = [];
+            for(var i = 0; i < recipe.listOfIngredients.length; i++) {
+                if(recipe.listOfIngredients[i] !== ingredient) {
+                    changedListOfIngredients[changedListOfIngredients.length] = recipe.listOfIngredients[i];
+                } else {
+                    continue;
+                }
 
+            }
 
+            return recipe.listOfIngredients = changedListOfIngredients;
+        }
+    }
 
-         }
-    
+    return recipe;
 }
+
+var newRecipe = culinaryRecipe("Sarma", "Serbian Food", "simple",["bacon", "gabidze", "pork", "rise", "water"], 45, "instrukcije");
+console.log(newRecipe);
+console.log(newRecipe.canBePreparedFor15Min());
+console.log(newRecipe.printIngredients());
+console.log(newRecipe.changeTypeOfCuisine("mexican"));
+console.log(newRecipe.deleteAnIngredient("bacon"));
+
+
+
+// drugi nacin
+
+function culinaryRecipe (name, type, complexity, ingredients, preparationTime, instruction) {
+    var recipe = {}
+    recipe.mealName = name;
+    recipe.mealType = type;
+    recipe.complexity = complexity;
+    recipe.listOfIngredients = ingredients;
+    recipe.preparingTime = preparationTime;
+    recipe.preparingInstructions = instruction;
+
+    recipe.printIngredients = function() {
+            console.log(recipe.listOfIngredients);
+        },
+    recipe.canBePreparedFor15Min = function() {
+            return recipe.preparingTime < 15;    
+        },
+    recipe.changeTypeOfCuisine = function(newTypeOfCuisine) {
+            return recipe.mealType = newTypeOfCuisine;
+        },
+    recipe.deleteAnIngredient = function (ingredient) {
+            var changedListOfIngredients = [];
+            for(var i = 0; i < recipe.listOfIngredients.length; i++) {
+                if(recipe.listOfIngredients[i] !== ingredient) {
+                    changedListOfIngredients[changedListOfIngredients.length] = recipe.listOfIngredients[i];
+                } else {
+                    continue;
+                }
+
+            }
+
+            return recipe.listOfIngredients = changedListOfIngredients;
+        }
+    
+
+    return recipe;
+}
+
+var newRecipe = culinaryRecipe("Sarma", "Serbian Food", "simple",["bacon", "gabidze", "pork", "rise", "water"], 45, "instrukcije");
+console.log(newRecipe);
+console.log(newRecipe.canBePreparedFor15Min());
+console.log(newRecipe.printIngredients());
+console.log(newRecipe.changeTypeOfCuisine("mexican"));
+console.log(newRecipe.deleteAnIngredient("bacon"));
+
+
+// treci nacin THIS & Constructor
+
+function Recipe (name, type, complexity, ingredients, preparationTime, instruction) {
+    
+    this.mealName = name;
+    this.mealType = type;
+    this.complexity = complexity;
+    this.listOfIngredients = ingredients;
+    this.preparingTime = preparationTime;
+    this.preparingInstructions = instruction;
+
+    this.printIngredients = function() {
+            console.log(this.listOfIngredients);
+        },
+    this.canBePreparedFor15Min = function() {
+            return this.preparingTime < 15;    
+        },
+    this.changeTypeOfCuisine = function(newTypeOfCuisine) {
+            return this.mealType = newTypeOfCuisine;
+        },
+    this.deleteAnIngredient = function (ingredient) {
+            var changedListOfIngredients = [];
+            for(var i = 0; i < this.listOfIngredients.length; i++) {
+                if(this.listOfIngredients[i] !== ingredient) {
+                    changedListOfIngredients[changedListOfIngredients.length] = this.listOfIngredients[i];
+                } else {
+                    continue;
+                }
+
+            }
+
+            return this.listOfIngredients = changedListOfIngredients;
+        }
+}
+
+var newRecipe = new Recipe("Sarma", "Serbian Food", "simple",["bacon", "gabidze", "pork", "rise", "water"], 45, "instrukcije");
+console.log(newRecipe);
+console.log(newRecipe.canBePreparedFor15Min());
+console.log(newRecipe.printIngredients());
+console.log(newRecipe.changeTypeOfCuisine("mexican"));
+console.log(newRecipe.deleteAnIngredient("bacon"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
