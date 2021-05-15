@@ -37,10 +37,12 @@ var favouriteCoffee = {
     sugar: "no"
 }
 
+
+
 /* 2. Create an object that represents your favourite movie. Please include title, actors,
 director, genre, popularity. */
 
-var favouriteMovie = {
+var Movie = {
     title: "Matrix",
     genre: "SF"
     popularity: "Top rated Movie #16"
@@ -50,6 +52,10 @@ var favouriteMovie = {
         supportActor: "Laurence Fishburne"
     }
 }
+
+//
+
+var favouriteMovie = new Movie ()
 
 
 /* 3. Write a function that creates an object that represents a project. Each project is
