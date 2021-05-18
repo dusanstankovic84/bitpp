@@ -1,3 +1,6 @@
+//Try to use built-in object methods to solve some of the problems here
+
+
 
 /* 1. Write a functional expression that duplicates each element of a given array.
 Input: [2, 4, 7, 11, -2, 1]
@@ -13,21 +16,83 @@ var builtInFunc = function (accumulator, currentValue) {
 
 console.log(arr.reduce(builtInFunc,[]));
 
+//
+
+function duplicates (arr) {
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        newArr.push(arr[i], arr[i]);
+    }
+    return newArr;
+}
+console.log(duplicates([2, 4, 7, 11, -2, 1]));
+
+
 
 
 /* 2. Write a functional expression that removes all duplicates in a given array.
 Input: [8, 13, 8, 9, 12, 8, 1, 1, 4, 13]
 Output: [1, 4, 8, 9, 12, 13] */
 
+var arr = [8, 13, 8, 9, 12, 8, 1, 1, 4, 13];
+
+function removeDuplicate (i) {
+    
+    return i.filter (function (value, index) {
+        return i.indexOf(value) === index;
+    });
+}
+
+var newArr = removeDuplicate(arr);
+console.log(newArr.sort(function(a, b) {
+    return a - b;
+  }));
+
+
+
 /* 3.
+
 a. Write a function that checks if a given array has odd number of elements.
 Input: [1, 2, 9, 2, 1]
 Output: true
+
 b. Write a function that counts the number of elements less than the middle
 element. If the given array has an even number of elements, print out an error
 message.
+
 Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
 Output: 4 */
+
+
+/* a) */
+
+function checkOddNum (arr) {
+    
+    var newArr = arr.filter (function (a) {
+        return a % 2 !== 0;
+    })
+    if (newArr.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(checkOddNum([1, 2, 9, 2, 1]));
+
+
+/* b) */
+
+function countElLessMiddleEl (arr) {
+    
+    if (arr.length % 2 === 0) {
+        return 'ERROR';
+    } else {
+        return Math.ceil(arr.length / 2);
+    }
+}
+console.log(countElLessMiddleEl([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
+
+
 
 
 /* 4. Write a function that finds the smallest element of a given array. The function should

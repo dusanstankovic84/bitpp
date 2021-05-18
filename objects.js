@@ -33,9 +33,23 @@ var favouriteCoffee = {
     name: "turkish",
     strenght: "strong",
     flavour: "black",
-    milk: "no"
-    sugar: "no"
+    milk: "no",
+    sugar: "no",
 }
+
+//
+
+function FavouriteCoffe (name, strenght, flavour, milk, sugar) {
+       this.Name = name;
+       this.strenght = strenght;
+       this.flavour = flavour;
+       this.milk = milk;
+       this.sugar = sugar;
+}
+
+var favouriteCoffee = new FavouriteCoffe ("turkish", "strong", "black", "no",  "no");
+console.log(favouriteCoffee);
+
 
 
 
@@ -44,18 +58,27 @@ director, genre, popularity. */
 
 var Movie = {
     title: "Matrix",
-    genre: "SF"
-    popularity: "Top rated Movie #16"
-    director: "Lana Wachowski"
+    genre: "SF",
+    popularity: "Top rated Movie #16",
+    director: "Lana Wachowski",
     actors = {
         leadActor: "Keanu Reeves",
-        supportActor: "Laurence Fishburne"
+        supportActor: "Laurence Fishburne",
     }
 }
 
 //
 
-var favouriteMovie = new Movie ()
+function Movie (title, genre, popularity, director, actors) {
+    this.title = title;
+    this.genrec = genre;
+    this.popularity = popularity;
+    this.director = director;
+    this.actors = actors;
+}
+
+var favouriteMovie = new Movie ("Matrix", "SF", "Top rated Movie #16", "Lana Wachowski", ["Keanu Reeves","Laurence Fishburne"]);
+console.log(favouriteMovie);
 
 
 /* 3. Write a function that creates an object that represents a project. Each project is
@@ -90,6 +113,31 @@ console.log(result);
 result.printRepository();
 console.log(result.isJavaScript());
 console.log(result.isDevelopment());
+
+//
+
+function Project (desc, lang, gitUrl, dev) {
+    this.description = desc;
+    this.language = lang;
+    this.gitRepository = gitUrl;
+    this.isInDev = dev;
+    this.printRepository = function () {
+        console.log(gitUrl);
+    },
+    this.isJavaScript = function () {
+        return lang === "JavaScript";
+    },
+    this.isDevelopment = function () {
+        return dev ? "project is in development" : "project is not in development";
+    },
+}
+
+var project = new Project ("program that calculates", "JavaScript", "https://github.com/dusanstankovic84/bitpp", true);
+console.log(project);
+project.printRepository();
+console.log(project.isJavaScript());
+console.log(project.isDevelopment());
+
 
 
 
