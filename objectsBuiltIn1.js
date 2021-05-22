@@ -100,20 +100,100 @@ return an object that contains the smallest value and its last position in the a
 Input: [1, 4, -2, 11, 8, 1, -2, 3]
 Output: { minValue: -2, minLastIndex: 6 } */
 
+function findMinValueAndLastPosOfValue (arr) {
+
+    var obj = {};
+    var min = Math.min(...arr);
+    var lastIndex = arr.lastIndexOf(min);
+
+    return obj = {
+        minValue: min,
+        minLastIndex: lastIndex
+    }
+}
+
+console.log(findMinValueAndLastPosOfValue([1, 4, -2, 11, 8, 1, -2, 3]));
+
+
+//
+
+function smallElement (arr) {
+    
+    var min = arr[0];
+    
+    arr.forEach(function(element,){
+              if (element < min) {
+                  min = element;
+
+              }
+              
+    })
+    var pos = arr.lastIndexOf(min);
+    return {
+        minValue: min, 
+        minLAstIndex: pos,
+    }
+}
+console.log(smallElement([1, 4, -2, 11, 8, 1, -2, 3]));
+
+
+
 
 /* 5.
 a. Write a function that finds all the elements in a given array less than a given
 element.
 Input: [2, 3, 8, -2, 11, 4], 6
-Output: [2, 3, -2, 4]
+Output: [2, 3, -2, 4]*/
 
-b. Write a function that finds all the elements in a given array that start with the “pro”
+function lessElem (arr, numb) {
+    return arr.filter(arr => arr < numb); 
+     
+}
+console.log(lessElem([2, 3, 8, -2, 11, 4], 6));
+
+//
+
+function lessElements (arr,el) {
+    return arr.filter(function(element) {
+        return element < el;
+    })
+}
+console.log(lessElements([2, 3, 8, -2, 11, 4],6));
+
+
+/*b. Write a function that finds all the elements in a given array that start with the “pro”
 substring. The function should be case insensitive.
 Input: [’JavaScript’, ’Programming’, ’fun’, ’product’]
-Output: [’Programming’, ‘product’]
+Output: [’Programming’, ‘product’]*/
 
-c. Write a function that expects an array and a callback function that filters out
+function allWithPro (arr, substr)  {
+    return arr.filter(function(element) {
+           return element.toLowerCase().startsWith(substr);
+    })
+}
+console.log(allWithPro(["JavaScript", "Programming", "fun", "product"], "pro"));
+
+/*c. Write a function that expects an array and a callback function that filters out
 some of the elements. Use functions defined in a) or b) to test it. */
+
+function lessElements (arr,el) {
+    return arr.filter(function(element) {
+        return element < el;
+    })
+}
+function allWithPro (arr, substr)  {
+    return arr.filter(function(element) {
+           return element.toLowerCase().startsWith(substr);
+    })
+}
+
+function filterSome (arr, elem, func) {
+          return func(arr,elem);
+}
+console.log(filterSome(["JavaScript", "Programming", "fun", "product"], "pro", allWithPro));
+console.log(filterSome([2, 3, 8, -2, 11, 4], 11, lessElements));
+
+
 
 
 /* 6.
@@ -124,13 +204,49 @@ and name for each product. For example,
 {name: ‘apples’, price: 100},
 {name: ‘milk’, price: 80},
 {name:’bananas’, price: 150}
-]
+]   */
 
-b. Write a function that calculates the total price of your shopping list.
-c. Write a function that calculates the average product price of your shopping list.
-Print this value with the precision of three decimals.
-d. Write a function that prints out the name of the most expensive product on your
+ var shopList = [
+    {name: "bread", price: 50},
+    {name: "apples", price: 100},
+    {name: "milk", price: 80},
+    {name: "bananas", price: 150},
+ ]
+
+/* b. Write a function that calculates the total price of your shopping list. */
+
+function totalPrice (arr) {
+    var total = 0;
+    arr.forEach(function (element) {
+        return total += element.price;        
+    })  
+    return total; 
+}
+
+console.log(totalPrice(shopList));
+
+
+
+/*c. Write a function that calculates the average product price of your shopping list.
+Print this value with the precision of three decimals.*/
+
+var averagePrice = shopList.reduce (function (a, b) {
+    return a + b.price / shopList.length;
+}, 0);
+
+var average = averagePrice.toFixed(3);
+
+console.log('Average price of products:', average);
+
+/*d. Write a function that prints out the name of the most expensive product on your
 shopping list. Write the name in uppercase. */
+
+shopList.sort (function (a, b) {
+    return a.price - b.price;
+})
+
+var mostExpenProd = shopList[shopList.length - 1].name.toUpperCase(); 
+console.log(mostExpenProd);
 
 
 /* 7.
