@@ -3,6 +3,7 @@
     padding: 15px;
     margin: 10px auto;
 }
+
 div {
     border-style: solid;
     border-color: black;
@@ -25,3 +26,13 @@ input {
 select {
     width: 100%;
 }
+
+.hidden {
+    background-color: red;
+    display: none;
+}
+
+.showError {
+    display: inline;
+}
+
